@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -33,18 +34,20 @@ export function HowItWorks() {
   ]
 
   return (
-    <section id="how-it-works" className="py-20 bg-gray-50">
+    <section id="how-it-works" className="py-12 md:py-20 bg-gray-50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">How Cricket Panga Works</h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl">
+              How Cricket Panga Works
+            </h2>
+            <p className="max-w-[900px] text-sm sm:text-base text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Follow these simple steps to start playing and winning
             </p>
           </div>
         </div>
 
-        <div ref={ref} className="relative mt-16 mb-20">
+        <div ref={ref} className="relative mt-8 md:mt-16 mb-12 md:mb-20">
           {/* Connection line */}
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-blue-200 -translate-y-1/2 hidden md:block"></div>
 
@@ -57,8 +60,8 @@ export function HowItWorks() {
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="relative h-40 w-40 mb-6 group">
-                  <div className="absolute inset-0 flex items-center justify-center rounded-full bg-blue-100 text-5xl font-bold text-blue-700 z-10 transform transition-transform group-hover:scale-110 duration-300">
+                <div className="relative h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 mb-4 md:mb-6 group">
+                  <div className="absolute inset-0 flex items-center justify-center rounded-full bg-blue-100 text-3xl sm:text-4xl md:text-5xl font-bold text-blue-700 z-10 transform transition-transform group-hover:scale-110 duration-300">
                     {step.number}
                   </div>
                   <div
@@ -66,18 +69,24 @@ export function HowItWorks() {
                     style={{ animationDuration: "3s", animationDelay: `${index * 0.5}s` }}
                   ></div>
                   <Image
-                    src={step.image || "/placeholder.svg"}
+                    src={step.image || "/placeholder.svg?height=160&width=160"}
                     alt={step.title}
                     fill
                     className="object-contain p-8 z-0"
                   />
                 </div>
 
-                <h3 className="text-xl font-bold">{step.title}</h3>
-                <p className="text-center text-gray-500 mt-2">{step.description}</p>
+                <h3 className="text-lg md:text-xl font-bold">{step.title}</h3>
+                <p className="text-center text-sm md:text-base text-gray-500 mt-2">{step.description}</p>
 
                 {index < steps.length - 1 && (
-                  <div className="absolute top-20 right-0 transform translate-x-1/2 rotate-0 md:rotate-90 text-blue-300 hidden md:block">
+                  <div className="absolute top-14 sm:top-16 md:top-20 -right-5 md:right-0 transform translate-x-1/2 rotate-90 md:rotate-0 text-blue-300 block md:hidden">
+                    <ArrowRight className="h-6 w-6" />
+                  </div>
+                )}
+
+                {index < steps.length - 1 && (
+                  <div className="absolute top-14 sm:top-16 md:top-20 right-0 transform translate-x-1/2 rotate-0 md:rotate-90 text-blue-300 hidden md:block">
                     <ArrowRight className="h-8 w-8" />
                   </div>
                 )}

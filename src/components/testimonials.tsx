@@ -74,22 +74,30 @@ export function Testimonials() {
     return () => clearInterval(interval)
   }, [inView, testimonials.length])
 
+  // Calculate how many testimonials to show based on screen size
+  const getVisibleCount = () => {
+    // This is just for the UI logic, actual responsiveness is handled by CSS
+    return 1
+  }
+
   return (
-    <section id="testimonials" className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-12 md:py-20 bg-gray-50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What Indian Cricket Fans Say</h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl">
+              What Indian Cricket Fans Say
+            </h2>
+            <p className="max-w-[900px] text-sm sm:text-base text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Don't just take our word for it - hear from our satisfied users across India
             </p>
           </div>
         </div>
 
-        <div ref={ref} className="mt-16 relative">
+        <div ref={ref} className="mt-8 md:mt-16 relative">
           <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-200"></div>
 
-          <div className="relative max-w-6xl mx-auto">
+          <div className="relative max-w-6xl mx-auto px-4">
             <div className="flex overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
@@ -101,39 +109,41 @@ export function Testimonials() {
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className="w-full md:w-1/2 lg:w-1/3 px-4"
+                    className="w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-4"
                     style={{ flex: `0 0 ${100 / testimonials.length}%` }}
                   >
                     <Card
                       className={`h-full transition-all duration-500 ${
-                        activeIndex === index ? "scale-105 shadow-lg border-blue-200" : "scale-100 shadow-sm"
+                        activeIndex === index
+                          ? "scale-100 sm:scale-105 shadow-lg border-blue-200"
+                          : "scale-95 sm:scale-100 shadow-sm"
                       }`}
                     >
-                      <CardContent className="p-6 flex flex-col h-full">
-                        <div className="flex items-center gap-2 mb-4">
+                      <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+                        <div className="flex items-center gap-1 sm:gap-2 mb-3 sm:mb-4">
                           {Array(testimonial.rating)
                             .fill(0)
                             .map((_, i) => (
-                              <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                              <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400 text-yellow-400" />
                             ))}
                           {Array(5 - testimonial.rating)
                             .fill(0)
                             .map((_, i) => (
-                              <Star key={i} className="h-5 w-5 text-gray-300" />
+                              <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-gray-300" />
                             ))}
                         </div>
-                        <p className="flex-1 text-gray-500 mb-4">{testimonial.comment}</p>
-                        <div className="flex items-center gap-4 mt-auto">
+                        <p className="flex-1 text-sm sm:text-base text-gray-500 mb-3 sm:mb-4">{testimonial.comment}</p>
+                        <div className="flex items-center gap-3 sm:gap-4 mt-auto">
                           <Image
-                            src={testimonial.avatar || "/placeholder.svg"}
+                            src={testimonial.avatar || "/placeholder.svg?height=48&width=48"}
                             alt={testimonial.name}
-                            width={48}
-                            height={48}
+                            width={40}
+                            height={40}
                             className="rounded-full border-2 border-blue-100"
                           />
                           <div>
-                            <h4 className="font-semibold">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-500">{testimonial.location}</p>
+                            <h4 className="font-semibold text-sm sm:text-base">{testimonial.name}</h4>
+                            <p className="text-xs sm:text-sm text-gray-500">{testimonial.location}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -143,12 +153,12 @@ export function Testimonials() {
               </div>
             </div>
 
-            <div className="flex justify-center mt-8 gap-2">
+            <div className="flex justify-center mt-6 sm:mt-8 gap-1 sm:gap-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    activeIndex === index ? "bg-blue-700 w-6" : "bg-gray-300"
+                    activeIndex === index ? "bg-blue-700 w-4 sm:w-6" : "bg-gray-300"
                   }`}
                   onClick={() => setActiveIndex(index)}
                 />

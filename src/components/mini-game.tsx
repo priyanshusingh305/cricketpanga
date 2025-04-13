@@ -91,6 +91,19 @@ export function MiniGame() {
     setBatPosition({ x, y })
   }
 
+  const handleTouchMove = (e) => {
+    if (!gameActive) return
+
+    e.preventDefault()
+
+    const touch = e.touches[0]
+    const gameArea = e.currentTarget.getBoundingClientRect()
+    const x = ((touch.clientX - gameArea.left) / gameArea.width) * 100
+    const y = ((touch.clientY - gameArea.top) / gameArea.height) * 100
+
+    setBatPosition({ x, y })
+  }
+
   useEffect(() => {
     if (score > highScore) {
       setHighScore(score)
@@ -98,12 +111,12 @@ export function MiniGame() {
   }, [score, highScore])
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 md:py-16 bg-gray-50">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-6 md:mb-8">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Test Your Cricket Skills</h2>
-            <p className="max-w-[600px] text-gray-500">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl">Test Your Cricket Skills</h2>
+            <p className="max-w-[600px] text-sm sm:text-base text-gray-500">
               Play this mini-game to see if you have what it takes to be a cricket champion
             </p>
           </div>
@@ -111,54 +124,62 @@ export function MiniGame() {
 
         <Card className="max-w-md mx-auto">
           <CardHeader>
-            <CardTitle className="flex justify-between items-center">
+            <CardTitle className="flex justify-between items-center text-lg md:text-xl">
               <span>Cricket Mini-Game</span>
-              <div className="flex items-center gap-2">
-                <Trophy className="h-5 w-5 text-yellow-500" />
-                <span>High Score: {highScore}</span>
+              <div className="flex items-center gap-1 md:gap-2">
+                <Trophy className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
+                <span className="text-sm md:text-base">High Score: {highScore}</span>
               </div>
             </CardTitle>
-            <CardDescription>
-              Move your mouse to hit the ball with the bat. Score as many runs as possible in 15 seconds!
+            <CardDescription className="text-xs md:text-sm">
+              Move your finger or mouse to hit the ball with the bat. Score as many runs as possible in 15 seconds!
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div
-              className="relative w-full h-64 bg-gradient-to-b from-green-100 to-green-200 rounded-lg border overflow-hidden cursor-none"
+              className="relative w-full h-48 md:h-64 bg-gradient-to-b from-green-100 to-green-200 rounded-lg border overflow-hidden cursor-none touch-none"
               onMouseMove={handleMouseMove}
+              onTouchMove={handleTouchMove}
+              onTouchStart={handleTouchMove}
             >
               {/* Game area */}
               <div
-                className="absolute bg-blue-600 rounded-full w-4 h-4 transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute bg-blue-600 rounded-full w-3 h-3 md:w-4 md:h-4 transform -translate-x-1/2 -translate-y-1/2"
                 style={{ left: `${ballPosition.x}%`, top: `${ballPosition.y}%` }}
               ></div>
 
               <div
-                className="absolute bg-gradient-to-r from-blue-700 to-blue-900 rounded-md w-12 h-4 transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute bg-gradient-to-r from-blue-700 to-blue-900 rounded-md w-10 h-3 md:w-12 md:h-4 transform -translate-x-1/2 -translate-y-1/2"
                 style={{ left: `${batPosition.x}%`, top: `${batPosition.y}%` }}
               ></div>
 
               {!gameActive && (
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                  <Button onClick={startGame} className="bg-blue-700 hover:bg-blue-800">
+                  <Button onClick={startGame} className="bg-blue-700 hover:bg-blue-800 text-sm md:text-base">
                     {timeLeft === 0 ? "Play Again" : "Start Game"}
                   </Button>
                 </div>
               )}
 
-              <div className="absolute top-2 left-2 bg-white/80 rounded px-2 py-1 text-sm font-medium">
+              <div className="absolute top-2 left-2 bg-white/80 rounded px-2 py-1 text-xs md:text-sm font-medium">
                 Time: {timeLeft}s
               </div>
 
-              <div className="absolute top-2 right-2 bg-white/80 rounded px-2 py-1 text-sm font-medium">
+              <div className="absolute top-2 right-2 bg-white/80 rounded px-2 py-1 text-xs md:text-sm font-medium">
                 Score: {score}
               </div>
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <p className="text-sm text-gray-500">Win real prizes in our fantasy cricket games!</p>
-            <Button variant="outline" size="sm" onClick={startGame} disabled={gameActive} className="gap-1">
-              <RefreshCw className="h-4 w-4" /> Reset
+            <p className="text-xs md:text-sm text-gray-500">Win real prizes in our fantasy cricket games!</p>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={startGame}
+              disabled={gameActive}
+              className="gap-1 text-xs md:text-sm"
+            >
+              <RefreshCw className="h-3 w-3 md:h-4 md:w-4" /> Reset
             </Button>
           </CardFooter>
         </Card>

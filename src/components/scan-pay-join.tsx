@@ -19,19 +19,19 @@ export function ScanPayJoin() {
     {
       title: "Scan Karo",
       description: "Scan the QR code with your UPI app",
-      icon: <QrCode className="h-8 w-8 text-blue-700" />,
+      icon: <QrCode className="h-6 w-6 md:h-8 md:w-8 text-blue-700" />,
       image: "/scan-step.png",
     },
     {
       title: "Pay Karo",
       description: "Pay ₹99 using your favorite payment method",
-      icon: <CreditCard className="h-8 w-8 text-blue-700" />,
+      icon: <CreditCard className="h-6 w-6 md:h-8 md:w-8 text-blue-700" />,
       image: "/pay-step.png",
     },
     {
       title: "Join Karo",
       description: "Start playing and win big prizes",
-      icon: <Smartphone className="h-8 w-8 text-blue-700" />,
+      icon: <Smartphone className="h-6 w-6 md:h-8 md:w-8 text-blue-700" />,
       image: "/join-step.png",
     },
   ]
@@ -45,42 +45,44 @@ export function ScanPayJoin() {
   }, [steps.length])
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-white to-blue-50">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
-          <div className="inline-flex items-center rounded-full border px-6 py-2 text-lg font-bold bg-orange-100 text-orange-700 border-orange-200">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 md:mb-10">
+          <div className="inline-flex items-center rounded-full border px-4 py-1 md:px-6 md:py-2 text-base md:text-lg font-bold bg-orange-100 text-orange-700 border-orange-200">
             Scan Karo, Pay Karo, Join Karo.
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Join Cricket Panga in 3 Simple Steps</h2>
-          <p className="max-w-[600px] text-gray-500">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl">
+            Join Cricket Panga in 3 Simple Steps
+          </h2>
+          <p className="max-w-[600px] text-sm sm:text-base text-gray-500">
             Our simple process makes it easy to start playing fantasy cricket in minutes
           </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
           <div
             className={`transition-all duration-1000 ${
               inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
             }`}
           >
-            <div className="relative h-[400px] w-full">
+            <div className="relative h-[300px] sm:h-[350px] md:h-[400px] w-full">
               <div className="absolute inset-0 bg-blue-100 rounded-lg overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-12 bg-blue-700 flex items-center px-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-                  <div className="text-white text-sm font-medium ml-2">UPI Payment</div>
+                <div className="absolute top-0 left-0 right-0 h-10 md:h-12 bg-blue-700 flex items-center px-4">
+                  <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500 mr-2"></div>
+                  <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500 mr-2"></div>
+                  <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500 mr-2"></div>
+                  <div className="text-white text-xs md:text-sm font-medium ml-2">UPI Payment</div>
                 </div>
 
-                <div className="absolute top-12 left-0 right-0 bottom-0 flex items-center justify-center">
+                <div className="absolute top-10 md:top-12 left-0 right-0 bottom-0 flex items-center justify-center">
                   {steps.map((step, index) => (
                     <div
                       key={index}
-                      className={`absolute inset-0 flex flex-col items-center justify-center p-6 transition-all duration-500 ${
+                      className={`absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 transition-all duration-500 ${
                         activeStep === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       }`}
                     >
-                      <div className="relative h-48 w-48 mb-6">
+                      <div className="relative h-32 w-32 md:h-48 md:w-48 mb-4 md:mb-6">
                         <Image
                           src={step.image || "/placeholder.svg?height=200&width=200"}
                           alt={step.title}
@@ -88,19 +90,19 @@ export function ScanPayJoin() {
                           className="object-contain"
                         />
                       </div>
-                      <h3 className="text-2xl font-bold text-blue-700 mb-2">{step.title}</h3>
-                      <p className="text-gray-600">{step.description}</p>
+                      <h3 className="text-xl md:text-2xl font-bold text-blue-700 mb-1 md:mb-2">{step.title}</h3>
+                      <p className="text-sm md:text-base text-gray-600">{step.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+              <div className="absolute -bottom-4 md:-bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
                 {steps.map((_, index) => (
                   <button
                     key={index}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      activeStep === index ? "bg-blue-700 w-8" : "bg-blue-300"
+                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
+                      activeStep === index ? "bg-blue-700 w-6 md:w-8" : "bg-blue-300"
                     }`}
                     onClick={() => setActiveStep(index)}
                   />
@@ -110,7 +112,7 @@ export function ScanPayJoin() {
           </div>
 
           <div
-            className={`space-y-8 transition-all duration-1000 ${
+            className={`space-y-6 md:space-y-8 transition-all duration-1000 ${
               inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
             }`}
             style={{ transitionDelay: "200ms" }}
@@ -118,24 +120,24 @@ export function ScanPayJoin() {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`flex items-start gap-4 transition-all duration-300 ${
+                className={`flex items-start gap-3 md:gap-4 transition-all duration-300 ${
                   activeStep === index ? "scale-105" : "scale-100 opacity-70"
                 }`}
                 onClick={() => setActiveStep(index)}
               >
                 <div
-                  className={`rounded-full p-4 ${
+                  className={`rounded-full p-3 md:p-4 ${
                     activeStep === index ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-500"
                   }`}
                 >
                   {step.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">{step.title}</h3>
-                  <p className="text-gray-500 mt-1">{step.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold">{step.title}</h3>
+                  <p className="text-sm md:text-base text-gray-500 mt-1">{step.description}</p>
                   {activeStep === index && (
                     <div className="mt-2 animate-fadeIn">
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <ul className="text-xs md:text-sm text-gray-600 space-y-1">
                         {index === 0 && (
                           <>
                             <li className="flex items-center gap-1">

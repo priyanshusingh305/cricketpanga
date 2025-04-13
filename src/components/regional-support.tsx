@@ -53,42 +53,44 @@ export function RegionalSupport() {
   }
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
-          <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium bg-orange-50 text-orange-700 border-orange-200">
-            <Globe className="mr-1 h-3.5 w-3.5" />
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-6 md:mb-8">
+          <div className="inline-flex items-center rounded-full border px-3 py-1 text-xs sm:text-sm font-medium bg-orange-50 text-orange-700 border-orange-200">
+            <Globe className="mr-1 h-3 w-3 sm:h-3.5 sm:w-3.5" />
             Regional Support
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Cricket Panga Speaks Your Language</h2>
-          <p className="max-w-[600px] text-gray-500">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl">
+            Cricket Panga Speaks Your Language
+          </h2>
+          <p className="max-w-[600px] text-sm sm:text-base text-gray-500">
             We support multiple Indian languages to make fantasy cricket accessible to everyone
           </p>
         </div>
 
         <Card className="max-w-4xl mx-auto overflow-hidden">
           <Tabs defaultValue="english" value={selectedLanguage} onValueChange={setSelectedLanguage}>
-            <div className="bg-gray-50 p-4 border-b">
-              <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-2">
+            <div className="bg-gray-50 p-3 md:p-4 border-b overflow-x-auto">
+              <TabsList className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-1 sm:gap-2">
                 {languages.map((lang) => (
                   <TabsTrigger
                     key={lang.id}
                     value={lang.id}
-                    className="data-[state=active]:bg-blue-700 data-[state=active]:text-white"
+                    className="data-[state=active]:bg-blue-700 data-[state=active]:text-white text-xs sm:text-sm"
                   >
-                    <span className="mr-1">{lang.flag}</span> {lang.name}
+                    <span className="mr-1">{lang.flag}</span> <span className="truncate">{lang.name}</span>
                   </TabsTrigger>
                 ))}
               </TabsList>
             </div>
 
-            <CardContent className="p-6">
+            <CardContent className="p-4 md:p-6">
               {Object.keys(content).map((lang) => (
                 <TabsContent key={lang} value={lang} className="mt-0">
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-bold">{content[lang as keyof typeof content].title}</h3>
-                    <p className="text-gray-500">{content[lang as keyof typeof content].description}</p>
-                    <Button className="bg-blue-700 hover:bg-blue-800">{content[lang as keyof typeof content].cta}</Button>
+                    <h3 className="text-xl md:text-2xl font-bold">{content[lang].title}</h3>
+                    <p className="text-sm md:text-base text-gray-500">{content[lang].description}</p>
+                    <Button className="bg-blue-700 hover:bg-blue-800">{content[lang].cta}</Button>
                   </div>
                 </TabsContent>
               ))}

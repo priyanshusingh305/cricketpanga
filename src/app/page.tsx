@@ -13,12 +13,15 @@ import { MiniGame } from "@/components/mini-game"
 import { RegionalSupport } from "@/components/regional-support"
 import { MobileAppPreview } from "@/components/mobile-app-preview"
 import { ScanPayJoin } from "@/components/scan-pay-join"
+import { MobileMenu } from "@/components/mobile-menu"
+import { CountdownTimer } from "@/components/countdown-timer"
+import { AITeamMaker } from "@/components/ai-team-maker"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col max-w-[100vw] overflow-hidden ">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative overflow-hidden rounded-full transition-all duration-300 group-hover:scale-110">
               <Image src="/logo.png" alt="Cricket Panga Logo" width={40} height={40} className="h-10 w-auto" />
@@ -47,10 +50,10 @@ export default function Home() {
               Live Matches
             </Link>
             <Link
-              href="#testimonials"
+              href="#ai-team-maker"
               className="text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:bg-blue-700 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300"
             >
-              Testimonials
+              AI Team Maker
             </Link>
             <Link
               href="#faq"
@@ -69,25 +72,34 @@ export default function Home() {
             </Button>
             <Button
               asChild
-              className="bg-blue-700 hover:bg-blue-800 shadow-lg hover:shadow-blue-200 transition-all duration-300"
+              className="hidden sm:flex bg-blue-700 hover:bg-blue-800 shadow-lg hover:shadow-blue-200 transition-all duration-300"
             >
               <Link href="#early-access">Early Access</Link>
             </Button>
+            <MobileMenu />
           </div>
         </div>
       </header>
       <main className="flex-1">
         <HeroSection />
-        <LiveMatches />
-        <ScanPayJoin />
-        <Features />
-        <HowItWorks />
-        <MobileAppPreview />
-        <MiniGame />
-        <Testimonials />
-        <RegionalSupport />
-        <FAQ />
-        <EarlyAccess />
+        <div className="py-8 md:py-12 bg-white">
+          <div className="container max-w-7xl mx-auto px-4 md:px-6">
+            <CountdownTimer />
+          </div>
+        </div>
+        <div className="w-full max-w-[1920px] mx-auto">
+          <LiveMatches />
+          <ScanPayJoin />
+          <AITeamMaker />
+          <Features />
+          <HowItWorks />
+          <MobileAppPreview />
+          <MiniGame />
+          <Testimonials />
+          <RegionalSupport />
+          <FAQ />
+          <EarlyAccess />
+        </div>
       </main>
       <Footer />
     </div>
