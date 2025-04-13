@@ -110,7 +110,7 @@ export function HeroSection() {
           <div
             className={`flex items-center justify-center mt-8 lg:mt-0 transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
           >
-            <div className="relative h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] xl:h-[550px] xl:w-[550px]">
+            <div className="relative w-full max-w-[550px] mx-auto aspect-square">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full opacity-20 blur-3xl"></div>
 
               {slides.map((slide, index) => (

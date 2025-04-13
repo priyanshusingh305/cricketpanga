@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer"
 import { LiveMatches } from "@/components/live-matches"
 import { MiniGame } from "@/components/mini-game"
 import { RegionalSupport } from "@/components/regional-support"
-import { MobileAppPreview } from "@/components/mobile-app-preview"
+// import { MobileAppPreview } from "@/components/mobile-app-preview"
 import { ScanPayJoin } from "@/components/scan-pay-join"
 import { MobileMenu } from "@/components/mobile-menu"
 import { CountdownTimer } from "@/components/countdown-timer"
@@ -19,7 +19,7 @@ import { AITeamMaker } from "@/components/ai-team-maker"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col max-w-[100vw] overflow-hidden ">
+    <div className="flex min-h-screen flex-col overflow-hidden">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-2 group">
@@ -78,20 +78,20 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className="flex-1">
+      <main className="flex-1 overflow-x-hidden">
         <HeroSection />
         <div className="py-8 md:py-12 bg-white">
           <div className="container max-w-7xl mx-auto px-4 md:px-6">
             <CountdownTimer />
           </div>
         </div>
-        <div className="w-full max-w-[1920px] mx-auto">
+        <div className="w-full mx-auto">
           <LiveMatches />
           <ScanPayJoin />
           <AITeamMaker />
           <Features />
           <HowItWorks />
-          <MobileAppPreview />
+          {/* <MobileAppPreview /> */}
           <MiniGame />
           <Testimonials />
           <RegionalSupport />
