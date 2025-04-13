@@ -23,9 +23,7 @@ export default function Home() {
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative overflow-hidden rounded-full transition-all duration-300 group-hover:scale-110">
-              <Image src="/logo.png" alt="Cricket Panga Logo" width={40} height={40} className="h-10 w-auto" />
-            </div>
+              <Image src="/logo.svg" alt="Cricket Panga Logo" width={130} height={60} className="h-10 w-auto" />
             <span className="text-xl font-bold text-blue-700 group-hover:text-blue-600 transition-colors">
               Cricket Panga <span className="text-orange-500 text-sm font-semibold">India Edition</span>
             </span>
