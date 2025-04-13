@@ -85,12 +85,12 @@ export function RegionalSupport() {
             </div>
 
             <CardContent className="p-4 md:p-6">
-              {Object.keys(content).map((lang) => (
+              {Object.entries(content).map(([lang, langContent]) => (
                 <TabsContent key={lang} value={lang} className="mt-0">
                   <div className="space-y-4">
-                    <h3 className="text-xl md:text-2xl font-bold">{content[lang].title}</h3>
-                    <p className="text-sm md:text-base text-gray-500">{content[lang].description}</p>
-                    <Button className="bg-blue-700 hover:bg-blue-800">{content[lang].cta}</Button>
+                    <h3 className="text-xl md:text-2xl font-bold">{langContent.title}</h3>
+                    <p className="text-sm md:text-base text-gray-500">{langContent.description}</p>
+                    <Button className="bg-blue-700 hover:bg-blue-800">{langContent.cta}</Button>
                   </div>
                 </TabsContent>
               ))}

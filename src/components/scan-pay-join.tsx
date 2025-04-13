@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, QrCode, Smartphone, CreditCard } from "lucide-react"
 import Link from "next/link"
 import { useInView } from "react-intersection-observer"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function ScanPayJoin() {
   const { ref, inView } = useInView({
@@ -37,7 +37,7 @@ export function ScanPayJoin() {
   ]
 
   // Auto-advance steps
-  useState(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length)
     }, 3000)

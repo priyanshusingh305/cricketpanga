@@ -47,7 +47,7 @@ export function HeroSection() {
           >
             <div className="inline-flex items-center rounded-full border px-3 py-1 text-xs sm:text-sm font-medium bg-orange-50 text-orange-700 border-orange-200 mb-4">
               <Star className="mr-1 h-3 w-3 sm:h-3.5 sm:w-3.5" />
-              India's #1 Fantasy Cricket Platform
+              India&apos;s #1 Fantasy Cricket Platform
             </div>
             <div className="space-y-2">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter">
@@ -67,7 +67,7 @@ export function HeroSection() {
                 </div>
               </div>
               <p className="max-w-[600px] text-sm sm:text-base md:text-lg lg:text-xl text-gray-500 mt-4">
-                Join India's fastest growing fantasy cricket platform. Create your dream team with players from
+                Join India&apos;s fastest growing fantasy cricket platform. Create your dream team with players from
                 <span className="font-semibold text-blue-700"> IPL</span>,
                 <span className="font-semibold text-blue-700"> Team India</span>, and
                 <span className="font-semibold text-blue-700"> international cricket</span>.

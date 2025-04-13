@@ -23,15 +23,21 @@ export function EarlyAccess() {
     threshold: 0.1,
   })
 
-  const handleChange = (e) => {
+  interface FormState {
+    name: string
+    phone: string
+    email: string
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target
-    setFormState((prev) => ({
+    setFormState((prev: FormState) => ({
       ...prev,
       [id]: value,
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     setIsSubmitting(true)
 
@@ -62,7 +68,7 @@ export function EarlyAccess() {
             }`}
           >
             <div className="space-y-2">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Get Early Access Today
               </h2>
               <p className="max-w-[600px] text-sm sm:text-base md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -147,7 +153,7 @@ export function EarlyAccess() {
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold text-center">Thank You!</h3>
                   <p className="text-sm md:text-base text-gray-500 text-center">
-                    Your early access request has been received. We'll send you details shortly.
+                    Your early access request has been received. We&#39;ll send you details shortly.
                   </p>
                 </div>
               ) : (

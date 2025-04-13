@@ -63,7 +63,7 @@ export function AITeamMaker() {
             <p className="text-sm sm:text-base text-gray-600">
               Our advanced AI analyzes thousands of data points to create the perfect fantasy cricket team for each
               match. This premium feature (worth ₹1000) is <span className="font-bold text-blue-700">FREE</span> for all
-              "Scan Karo, Pay Karo, Join Karo" early access users.
+              &quot;Scan Karo, Pay Karo, Join Karo&quot; early access users.
             </p>
 
             <ul className="space-y-2 mt-2">

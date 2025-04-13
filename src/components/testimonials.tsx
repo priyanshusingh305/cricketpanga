@@ -74,11 +74,7 @@ export function Testimonials() {
     return () => clearInterval(interval)
   }, [inView, testimonials.length])
 
-  // Calculate how many testimonials to show based on screen size
-  const getVisibleCount = () => {
-    // This is just for the UI logic, actual responsiveness is handled by CSS
-    return 1
-  }
+  // Removed unused getVisibleCount function
 
   return (
     <section id="testimonials" className="py-12 md:py-20 bg-gray-50">
@@ -89,7 +85,7 @@ export function Testimonials() {
               What Indian Cricket Fans Say
             </h2>
             <p className="max-w-[900px] text-sm sm:text-base text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Don't just take our word for it - hear from our satisfied users across India
+              Don&apos;t just take our word for it - hear from our satisfied users across India
             </p>
           </div>
         </div>

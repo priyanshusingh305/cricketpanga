@@ -57,8 +57,10 @@ export function LiveMatches() {
     },
   ]
 
-  const formatTimeRemaining = (startTime) => {
-    const diff = startTime - currentTime
+  
+
+  const formatTimeRemaining = (startTime: Date): string => {
+    const diff = startTime.getTime() - currentTime.getTime()
     if (diff <= 0) return "Started"
 
     const hours = Math.floor(diff / (1000 * 60 * 60))

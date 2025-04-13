@@ -81,7 +81,13 @@ export function MiniGame() {
     setBallDirection({ x: 2, y: 2 })
   }
 
-  const handleMouseMove = (e) => {
+
+
+  interface MouseEventWithTarget extends React.MouseEvent<HTMLDivElement> {
+    currentTarget: EventTarget & HTMLDivElement
+  }
+
+  const handleMouseMove = (e: MouseEventWithTarget): void => {
     if (!gameActive) return
 
     const gameArea = e.currentTarget.getBoundingClientRect()
@@ -91,7 +97,11 @@ export function MiniGame() {
     setBatPosition({ x, y })
   }
 
-  const handleTouchMove = (e) => {
+  interface TouchEventWithTarget extends React.TouchEvent<HTMLDivElement> {
+    currentTarget: EventTarget & HTMLDivElement
+  }
+
+  const handleTouchMove = (e: TouchEventWithTarget): void => {
     if (!gameActive) return
 
     e.preventDefault()
