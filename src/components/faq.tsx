@@ -13,80 +13,128 @@ export function FAQ() {
   const faqItems = [
     {
       id: "item-1",
-      question: "What is the early access offer?",
+      question: "What is Cricket Panga?",
       answer:
-        "Our early access offer allows you to deposit ₹99 and get ₹150 in your wallet within 4 days. You'll also get our AI Team Maker (worth ₹1000) for FREE. This is a limited-time offer for new users to get started with Cricket Panga.",
-      tags: ["early access", "offer", "bonus", "deposit", "ai team maker"],
+        "Cricket Panga is a fantasy sports platform where users can create virtual cricket teams based on real-life players. Participants earn points based on the actual performance of these players in live matches, competing against others to win exciting prizes.​",
+      tags: ["cricket panga", "fantasy", "sports", "teams", "points"],
     },
     {
       id: "item-2",
-      question: "When will Cricket Panga officially launch?",
+      question: "How does the ₹99 deposit offer work?",
       answer:
-        "Cricket Panga will officially launch on June 1, 2025. Early access users can start playing before the official launch and will receive exclusive benefits.",
-      tags: ["launch", "date", "early access"],
+        "When you deposit ₹99 into your Cricket Panga wallet, you receive a total value of ₹149. This includes your ₹99 deposit plus an additional ₹50 bonus. To activate this bonus, please share your payment receipt with us via WhatsApp at 8237358619. Once verified, the bonus will be credited to your account.​",
+      tags: ["deposit", "offer", "bonus", "₹99", "wallet"],
     },
     {
       id: "item-3",
-      question: "What is the AI Team Maker feature?",
+      question: "Are there state-specific editions of Cricket Panga?",
       answer:
-        "The AI Team Maker is our premium feature that uses advanced algorithms to create optimized fantasy cricket teams based on player statistics, form, and match conditions. It provides up to 5 team combinations with captain and vice-captain recommendations. This feature will be priced at ₹1000 after launch but is FREE for all early access users.",
-      tags: ["ai", "team maker", "feature", "premium"],
+        "Yes, Cricket Panga offers customized editions for various states, such as Goa Edition, Delhi Edition, Mumbai Edition, and more. These editions provide localized contests, leaderboards, and promotions tailored to the preferences of users in each region.​",
+      tags: ["state", "editions", "goa", "delhi", "mumbai"],
     },
     {
       id: "item-4",
-      question: "Is Cricket Panga legal in India?",
+      question: "Is Cricket Panga legal in all Indian states?",
       answer:
-        "Yes, Cricket Panga is completely legal in India. Fantasy sports are classified as games of skill and are permitted in most Indian states. However, please check your local regulations as some states have restrictions.",
-      tags: ["legal", "india", "regulations"],
+        "Fantasy sports platforms like Cricket Panga are considered games of skill and are legal in most Indian states. However, certain states have restrictions:​ Andhra Pradesh, Assam, Odisha, Telangana, Nagaland, Sikkim, Tamil Nadu. In these states, participation in paid fantasy sports contests may be prohibited due to local laws. ​",
+      tags: ["legal", "india", "states", "restrictions"],
     },
     {
       id: "item-5",
-      question: "How do I withdraw my winnings?",
+      question: "Why are there restrictions in some states?",
       answer:
-        "You can withdraw your winnings directly to your bank account or UPI ID. The minimum withdrawal amount is ₹200, and withdrawals are processed within 24 hours.",
-      tags: ["withdraw", "winnings", "payment", "upi"],
+        "Gambling laws in India are state-specific. While the Supreme Court has recognized fantasy sports as games of skill, some states have laws that restrict or prohibit online gaming for money, including fantasy sports.​",
+      tags: ["laws", "restrictions", "states", "fantasy sports"],
     },
     {
       id: "item-6",
-      question: "What payment methods are accepted?",
+      question: "Can users from restricted states participate in free contests?",
       answer:
-        "Cricket Panga accepts payments via UPI (Google Pay, PhonePe, Paytm), net banking, credit/debit cards, and popular wallets like Paytm and PhonePe.",
-      tags: ["payment", "upi", "paytm", "phonepe", "google pay"],
+        "Users from restricted states are advised to refrain from participating in any contests on Cricket Panga, including free ones, to ensure compliance with local laws.​",
+      tags: ["restricted", "states", "free", "contests"],
     },
     {
       id: "item-7",
-      question: "How do I create a team?",
+      question: "Does Cricket Panga provide analytics of previous matches?",
       answer:
-        "To create a team, select an upcoming match, choose players within the 100 credit budget, select a captain and vice-captain, and save your team. You can create multiple teams for the same match. Early access users can also use our AI Team Maker to automatically generate optimized teams.",
-      tags: ["team", "create", "captain", "players", "ai team maker"],
+        "Yes, Cricket Panga offers comprehensive analytics of past matches, including player performance statistics, team strategies, and match outcomes. This information helps users make informed decisions when creating their fantasy teams.​",
+      tags: ["analytics", "past", "matches", "statistics"],
     },
     {
       id: "item-8",
-      question: "What documents are required for KYC?",
+      question: "How can I access the state-specific editions?",
       answer:
-        "For KYC verification, you need to provide your PAN card and a valid address proof (Aadhaar card, driving license, or voter ID). KYC verification is mandatory for withdrawals.",
-      tags: ["kyc", "documents", "pan", "aadhaar"],
+        "Upon registration, Cricket Panga automatically detects your location and directs you to the appropriate state-specific edition. Alternatively, you can manually select your preferred edition from the app or website settings.​",
+      tags: ["state", "edition", "location", "settings"],
     },
     {
       id: "item-9",
-      question: "Can I create private contests for friends?",
+      question: "Is there an age requirement to play on Cricket Panga?",
       answer:
-        "Yes, you can create private contests and invite your friends to join using a unique code. You can customize the entry fee and prize distribution for private contests.",
-      tags: ["private", "contests", "friends", "invite"],
+        "Yes, users must be at least 18 years old to participate in contests on Cricket Panga, in accordance with legal regulations.​",
+      tags: ["age", "requirement", "18"],
     },
     {
       id: "item-10",
-      question: "Which Indian cricket leagues are supported?",
+      question: "How can I contact Cricket Panga support?",
       answer:
-        "Cricket Panga supports all major Indian cricket leagues including IPL, Ranji Trophy, Syed Mushtaq Ali Trophy, Vijay Hazare Trophy, and all international matches featuring Team India.",
-      tags: ["leagues", "ipl", "ranji", "india"],
+        "For any queries or assistance, you can reach out to our customer support team via the 'Contact Us' section on our website or app. We're here to help!​",
+      tags: ["contact", "support", "help"],
     },
     {
       id: "item-11",
-      question: "Is Cricket Panga available in regional languages?",
-      answer:
-        "Yes, Cricket Panga is available in multiple Indian languages including Hindi, Tamil, Telugu, Bengali, and Marathi to make fantasy cricket accessible to everyone across India.",
-      tags: ["languages", "regional", "hindi", "tamil", "telugu"],
+      question: "How many people can sign up for Cricket Panga?",
+      answer: "Up to 1 lakh users can sign up for Cricket Panga.",
+      tags: ["signup", "limit", "users"],
+    },
+    {
+      id: "item-12",
+      question: "How do I sign up for Cricket Panga?",
+      answer: `To sign up, follow these simple steps:
+
+1. Scan the QR Code to initiate your journey.
+2. Make a Payment of ₹99 to your Cricket Panga wallet.
+3. Send a WhatsApp Message by texting “Hi” to 8237358619.
+4. Share Your Receipt of the payment on WhatsApp to receive your welcome bonus.`,
+      tags: ["signup", "how to join", "whatsapp", "qr code"],
+    },
+    {
+      id: "item-13",
+      question: "Are there different editions of Cricket Panga?",
+      answer: `Yes! Cricket Panga features special state-wise editions such as:
+
+- Goa Edition
+- Delhi Edition
+- Mumbai Edition
+- India Edition
+
+Each edition has localized contests, leaderboards, and promotions tailored to that region.`,
+      tags: ["editions", "state wise", "regional"],
+    },
+    {
+      id: "item-14",
+      question: "How many people can play per edition?",
+      answer: "Each edition is limited to the first 50,000 players only.",
+      tags: ["limit", "edition", "players"],
+    },
+    {
+      id: "item-15",
+      question: "How much does it cost to participate in a match?",
+      answer: "Each contestant needs to contribute ₹10 per match.",
+      tags: ["cost", "match", "entry fee"],
+    },
+    {
+      id: "item-16",
+      question: "If there aren’t 50,000 players, will the winner still get ₹1 lakh?",
+      answer: "No. If the total number of participants is less than 50,000, the prize amount will be adjusted proportionally based on the actual number of players.",
+      tags: ["prize", "adjustment", "participants"],
+    },
+    {
+      id: "item-17",
+      question: "How do I avail the ₹99 for ₹149 wallet recharge offer?",
+      answer: `The first 10,000 users who sign up can get ₹149 credited to their wallet for just ₹99.
+Note: This offer is not available after the 10,000th sign-up.`,
+      tags: ["wallet", "offer", "₹149", "₹99"],
     },
   ]
 
